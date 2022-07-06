@@ -1,0 +1,46 @@
+import "reflect-metadata";
+import {ConnectionOptions, createConnection} from "../../src/index";
+import {Post} from "./entity/Post";
+
+// NOTE: this example is not working yet, only concepts of how this feature must work described here
+
+const options: ConnectionOptions = {
+    type: "mysql",
+    host: "localhost",
+    port: 3306,
+    username: "root",
+    password: "admin",
+    database: "test",
+    synchronize: true,
+    // entitySchemaDirectories: [__dirname + "/schemas"],
+    entitySchemas: [
+        require(__dirname + "/../../../../sample/sample24-schemas/schemas/post.json"),
+        require(__dirname + "/../../../../sample/sample24-schemas/schemas/post-details.json"),
+        require(__dirname + "/../../../../sample/sample24-schemas/schemas/category.json"),
+        require(__dirname + "/../../../../sample/sample24-schemas/schemas/image.json")
+    ]
+};
+
+createConnection(options).then(connection => {
+    let postRepository = connection.getRepository<Post>("Post");
+
+    let post: Post = {
+        title: "Hello post",
+        text: "I am virtual post!",
+        details: {
+            metadata: "#post,#virtual",
+            comment: "it all about a post"
+        },
+        images: [],
+        secondaryImages: [],
+        categories: []
+    };
+    
+    postRepository
+        .save(post)
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => console.log(error.stack ? error.stack : error));
+
+}).catch(error => console.log(error.stack ? error.stack : error));

@@ -1,0 +1,96 @@
+{
+  "name": "typeorm",
+  "private": true,
+  "version": "0.1.0-alpha.37",
+  "description": "Data-Mapper ORM for TypeScript, ES7, ES6, ES5. Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, WebSQL, MongoDB databases.",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Umed Khudoiberdiev",
+    "email": "pleerock.me@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typeorm/typeorm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/typeorm/typeorm/issues"
+  },
+  "tags": [
+    "orm",
+    "typescript",
+    "typescript-orm",
+    "mysql",
+    "mysql-orm",
+    "postgresql",
+    "postgresql-orm",
+    "mariadb",
+    "mariadb-orm",
+    "sqlite",
+    "sqlite-orm",
+    "sql-server",
+    "sql-server-orm",
+    "oracle",
+    "oracle-orm",
+    "websql",
+    "websql-orm"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/chai-as-promised": "0.0.31",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.26",
+    "@types/sinon": "^2.3.3",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-file": "^0.3.0",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-mocha": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulpclass": "^0.1.2",
+    "mocha": "^2.5.3",
+    "mongodb": "^2.2.31",
+    "mssql": "^4.0.4",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.1",
+    "pg": "^7.3.0",
+    "remap-istanbul": "^0.9.5",
+    "sinon": "^2.4.1",
+    "sinon-chai": "^2.13.0",
+    "sqlite3": "^3.1.8",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.6.0",
+    "tslint-stylish": "^2.1.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "chalk": "^2.0.1",
+    "cli-highlight": "^1.1.4",
+    "dotenv": "^4.0.0",
+    "glob": "^7.1.2",
+    "js-yaml": "^3.8.4",
+    "mkdirp": "^0.5.1",
+    "reflect-metadata": "^0.1.10",
+    "xml2js": "^0.4.17",
+    "yargonaut": "^1.1.2",
+    "yargs": "^8.0.2"
+  },
+  "scripts": {
+    "test": "gulp tests",
+    "compile": "tsc",
+    "setup:config": "gulp createTravisOrmConfig",
+    "package": "gulp package"
+  },
+  "bin": {
+    "typeorm": "./cli.js"
+  }
+}
